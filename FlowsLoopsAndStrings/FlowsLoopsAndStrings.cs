@@ -1,5 +1,6 @@
 ﻿using FlowsLoopsAndStrings.Helpers;
 
+
 namespace FlowsLoopsAndStrings;
 
 public class FlowsLoopsAndStrings
@@ -11,12 +12,10 @@ public class FlowsLoopsAndStrings
 
     public void Start()
     {
-        Console.WriteLine($"testing enums {Utils.GetEnumDecryption(MainMenuEnum.Exit)}");
-        Console.WriteLine($"testing enums {Utils.GetEnumDecryption(MainMenuEnum.WrongChoice)} {MainMenuEnum.WrongChoice}");
 
-        if (MainMenuEnum.WrongChoice == (MainMenuEnum)4)
+        if ((int)MainMenuEnum.Exit == 0)
         {
-            Console.WriteLine("found 4");
+            Console.WriteLine("found 0");
         }
         Console.ReadKey();
     }//end of Start

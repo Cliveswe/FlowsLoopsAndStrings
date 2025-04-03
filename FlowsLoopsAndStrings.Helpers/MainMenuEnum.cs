@@ -6,17 +6,16 @@ namespace FlowsLoopsAndStrings.Helpers
     {
 
 
-        [Description("Exit lkjs")]
-        Exit,
+        [Description("Go to the cinema")]
+        GoToTheCinema = 1,
+
+        [Description("Repeat 10 times!")]
+        Repeat10Times,
 
         [Description("Wrong choice, try again!")]
-        WrongChoice = 4,
+        WrongChoice,
 
-        /*[Description("Go Fishing")]
-        GoFishing,
-
-        [Description("Play Basketball")]
-        PlayBasketball,
-            */
+        [Description("Exit application.")]
+        Exit = 0
     }
 }
