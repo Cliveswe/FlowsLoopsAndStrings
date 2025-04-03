@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            FlowsLoopsAndStrings flowsLoopsAndString = new FlowsLoopsAndStrings().Start();
+            FlowsLoopsAndStrings flowsLoopsAndStringObj = new FlowsLoopsAndStrings();
+            flowsLoopsAndStringObj.Start();
 
         }
     }
