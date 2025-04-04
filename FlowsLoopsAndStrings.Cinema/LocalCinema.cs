@@ -26,23 +26,29 @@ public class LocalCinema
 
                 case (int)LocalCinemaMenuChoicesEnum.YouthPensionerCheck:
 
-                CinemaCheckAge cinemaCheckAge = new CinemaCheckAge();
+                CinemaCheckAge? cinemaCheckAge = new CinemaCheckAge();
                 cinemaCheckAge.ValidatYouthOrPensioner(cinemaCheckAge.GetVisitorsAge());
-                Utilities.NewLine();
+                cinemaCheckAge = null;
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
 
+                CinemaGroupPrice? groupPrice = new CinemaGroupPrice();
+                groupPrice.TotalTicketPrice(groupPrice.GetNumberOfVisitors());//group of cinema visitors.
+                groupPrice = null;
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.Exit:
+
                 Utilities.ClearScreen();
                 Utilities.ResetTextColour();
+
                 done = true;
                 break;
                 default:
+
                 Utilities.InputErrorDisplayMessage();
                 break;
             }
-
+            Utilities.NewLine();
         } while (!done);
 
         Utilities.ResetTextColour();

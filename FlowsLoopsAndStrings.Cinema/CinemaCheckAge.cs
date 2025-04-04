@@ -60,9 +60,9 @@ public class CinemaCheckAge
     }
 
     /// <summary>
-    /// 
+    /// Get the visitors age from the user.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The age of the cinema visitor as int.</returns>
     public int GetVisitorsAge()
     {
         int userAge = 0;
@@ -74,6 +74,4 @@ public class CinemaCheckAge
 
         return userAge;
     }
-
-
-}
+}//end of class

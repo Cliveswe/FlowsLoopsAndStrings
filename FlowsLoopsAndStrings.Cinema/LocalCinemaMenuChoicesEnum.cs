@@ -16,5 +16,7 @@ public enum LocalCinemaMenuChoicesEnum
     [Description("Enter your age")]
     EnterYourAgePrompt = -1,
 
+    [Description("How many visitors")]
+    EnterTheNumberOfVisitorsPrompt = -2
 
 }
