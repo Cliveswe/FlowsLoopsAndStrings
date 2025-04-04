@@ -2,10 +2,10 @@
 using System.Reflection;
 
 namespace FlowsLoopsAndStrings.Helpers;
-public static class Utils
+public static class Utilities
 {
     /// <summary>
-    /// Get the decryption from a Enum class.
+    /// Get the decryption from a Enum class. 
     /// </summary>
     /// <param name="value">An enum member.</param>
     /// <returns>The enum decryption as a string.</returns>

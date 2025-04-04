@@ -18,8 +18,11 @@ public class FlowsLoopsAndStrings
             choice = ReadUserChoice(MainMenuEnum.Prompt);
             switch (choice)
             {
-
-                case ((int)MainMenuEnum.Exit):
+                case (int)MainMenuEnum.GoToTheCinema:
+                Console.WriteLine("Going to the cinema!");
+                LocalCinema().Start();
+                break;
+                case (int)MainMenuEnum.Exit:
                 Console.WriteLine("Bye!");
                 done = true;
                 break;
@@ -42,7 +45,7 @@ public class FlowsLoopsAndStrings
         int userChoice = -1;
         string promptMessage = "";
 
-        Utils.GetEnumDecryption(prompt, out promptMessage);
+        Utilities.GetEnumDecryption(prompt, out promptMessage);
 
         Console.Write($"{promptMessage}: ");
 
@@ -63,10 +66,11 @@ public class FlowsLoopsAndStrings
         string message = "";
 
         ErrorTextColour();
-        Utils.GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
+        Utilities.GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
         Console.WriteLine($"{Environment.NewLine}{message}");
         ResetTextColour();
     }
+
     /// <summary>
     /// Display a formated main menu.
     /// </summary>
@@ -86,7 +90,7 @@ public class FlowsLoopsAndStrings
             if (mainMenuEnum == MainMenuEnum.Exit)
             {
 
-                Utils.GetEnumDecryption(mainMenuEnum, out exit);
+                Utilities.GetEnumDecryption(mainMenuEnum, out exit);
                 continue;
             }
 
@@ -97,7 +101,7 @@ public class FlowsLoopsAndStrings
             }
 
             //Get the menu choice decryption
-            if (Utils.GetEnumDecryption(mainMenuEnum, out res))
+            if (Utilities.GetEnumDecryption(mainMenuEnum, out res))
             {
 
                 DisplayChoice((int)mainMenuEnum, res);

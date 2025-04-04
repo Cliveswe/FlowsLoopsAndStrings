@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FlowsLoopsAndStrings.Helpers\FlowsLoopsAndStrings.Helpers.csproj" />
-    <ProjectReference Include="..\LocalCinema\LocalCinema.csproj" />
-  </ItemGroup>
-
 </Project>

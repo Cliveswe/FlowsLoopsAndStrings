@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowsLoopsAndStrings", "FlowsLoopsAndStrings\FlowsLoopsAndStrings.csproj", "{A5CB0937-95DF-4F26-A854-666DEBD973FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowsLoopsAndStrings.Helpers", "FlowsLoopsAndStrings.Helpers\FlowsLoopsAndStrings.Helpers.csproj", "{A70383DB-F1C9-4D2A-B7F3-1E1DAE7B2A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalCinema", "LocalCinema\LocalCinema.csproj", "{041F04D5-8FF4-4963-82ED-018CB7789CA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A70383DB-F1C9-4D2A-B7F3-1E1DAE7B2A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70383DB-F1C9-4D2A-B7F3-1E1DAE7B2A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A70383DB-F1C9-4D2A-B7F3-1E1DAE7B2A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041F04D5-8FF4-4963-82ED-018CB7789CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041F04D5-8FF4-4963-82ED-018CB7789CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041F04D5-8FF4-4963-82ED-018CB7789CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041F04D5-8FF4-4963-82ED-018CB7789CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
