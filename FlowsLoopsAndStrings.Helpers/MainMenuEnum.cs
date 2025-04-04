@@ -15,6 +15,9 @@ namespace FlowsLoopsAndStrings.Helpers
         [Description("Wrong choice, try again!")]
         WrongChoice,
 
+        [Description("Enter a menu option")]
+        Prompt,
+
         [Description("Exit application.")]
         Exit = 0
     }
