@@ -1,4 +1,5 @@
-﻿namespace FlowsLoopsAndStrings.Cinema
+﻿
+namespace FlowsLoopsAndStrings.Cinema
 {
     public class LocalCinema
     {
@@ -8,8 +9,15 @@
         }
         public void Start()
         {
-            Console.WriteLine("success");
+            DisplayMenu();
         }
 
+        private void DisplayMenu()
+        {
+            Console.WriteLine("********************************");
+            Console.WriteLine("* Welcome to your local Cinema.*");
+            Console.WriteLine("********************************");
+
+        }
     }
 }
