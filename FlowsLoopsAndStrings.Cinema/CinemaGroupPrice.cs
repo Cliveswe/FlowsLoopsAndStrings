@@ -17,7 +17,7 @@ public class CinemaGroupPrice
     {
 
     }
-    public decimal TotalTicketPrice(int numberOfVisitors)
+    public decimal TotalTicketPrice()
     {
         decimal totalTicketPrice = 0;
         CinemaCheckAge cinemaCheckAge = new CinemaCheckAge();

@@ -6,28 +6,55 @@ public class CinemaCheckAge
 {
     private string ticketPriceInfo;
     private decimal ticketPrice;
+    private int visitorsAge;
 
+    /// <summary>
+    /// Price of a ticket.
+    /// </summary>
     public decimal TicketPrice
     {
         get { return ticketPrice; }
         private set { ticketPrice = value; }
     }
+
+    /// <summary>
+    /// The person the ticket is valid for.
+    /// </summary>
     public string TicketPriceInfo
     {
         get { return ticketPriceInfo; }
         private set { ticketPriceInfo = value; }
     }
 
+    /// <summary>
+    /// Visitors age.
+    /// </summary>
+    public int VisitorsAge
+    {
+        get { return visitorsAge; }
+        private set { visitorsAge = value; }
+    }
+
     public CinemaCheckAge()
     {
         TicketPrice = 0M;
-        TicketPriceInfo = "";
+        TicketPriceInfo = "No data available.";
     }
+
+    /// <summary>
+    /// Method that runs that check the age of the visitor.
+    /// </summary>
+    public void Run()
+    {
+        GetVisitorsAge();
+        ValidateYouthOrPensioner();
+        DisplayTicketPrice();
+    }
+
     /// <summary>
     /// Validate the visitors age.
     /// </summary>
-    /// <param name="VisitorsAge">The age of the visitor to the cinema as a int.</param>
-    public void ValidateYouthOrPensioner(int VisitorsAge)
+    private void ValidateYouthOrPensioner()
     {
 
         //If you are a Youth your ticket will be a youth ticket
@@ -37,7 +64,7 @@ public class CinemaCheckAge
             if (Utilities.GetEnumDecryption(CinemaPriceCategoriesEnum.YouthTicketPrice, out ticketPriceInfo))
             {
 
-                ticketPrice = (decimal)CinemaPriceCategoriesEnum.YouthTicketPrice;
+                TicketPrice = (decimal)CinemaPriceCategoriesEnum.YouthTicketPrice;
             }
         }//If you are a Pensioner your ticket will be a pensioners ticket
         else if (VisitorsAge > (int)CinemaPriceCategoriesEnum.Pensioner)
@@ -46,7 +73,7 @@ public class CinemaCheckAge
             if (Utilities.GetEnumDecryption(CinemaPriceCategoriesEnum.PensionerTicketPrice, out ticketPriceInfo))
             {
 
-                ticketPrice = (decimal)CinemaPriceCategoriesEnum.PensionerTicketPrice;
+                TicketPrice = (decimal)CinemaPriceCategoriesEnum.PensionerTicketPrice;
             }
         }
         else//If you are neither Pensioner or Youth your ticket will be a standard ticket
@@ -54,7 +81,7 @@ public class CinemaCheckAge
             if (Utilities.GetEnumDecryption(CinemaPriceCategoriesEnum.StandardTicketPrice, out ticketPriceInfo))
             {
 
-                ticketPrice = (decimal)CinemaPriceCategoriesEnum.StandardTicketPrice;
+                TicketPrice = (decimal)CinemaPriceCategoriesEnum.StandardTicketPrice;
             }
         }
     }
@@ -62,9 +89,7 @@ public class CinemaCheckAge
     /// <summary>
     /// Display the cinema ticket price.
     /// </summary>
-    /// <param name="ticketPriceInfo">Information on what you ticket is as a string.</param>
-    /// <param name="ticketPrice">Price of your ticket as int.</param>
-    public void DisplayTicketPrice()
+    private void DisplayTicketPrice()
     {
         Console.WriteLine($"{TicketPriceInfo}: {string.Format("{0:c}", TicketPrice)}");
     }
@@ -72,16 +97,29 @@ public class CinemaCheckAge
     /// <summary>
     /// Get the visitors age from the user.
     /// </summary>
-    /// <returns>The age of the cinema visitor as int.</returns>
-    public int GetVisitorsAge()
+    private void GetVisitorsAge()
     {
-        int userAge = 0;
+        bool validAge = false;
         do
         {
 
-            userAge = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterYourAgePrompt);
-        } while (userAge <= (int)LocalCinemaMenuChoicesEnum.Exit);
+            VisitorsAge = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterYourAgePrompt);
+            if (VisitorsAge > (int)LocalCinemaMenuChoicesEnum.Exit)
 
-        return userAge;
+            {
+                validAge = true;
+            }
+            else
+            {
+
+                Utilities.ErrorTextColour();
+                Console.WriteLine("Age must cannot be less than 1 years old.");
+                Utilities.ResetTextColour();
+                Utilities.NewLine();
+            }
+
+        } while (!validAge);
+
+
     }
 }//end of class
