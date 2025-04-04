@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FlowsLoopsAndStrings.Helpers\FlowsLoopsAndStrings.Helpers.csproj" />
-    <ProjectReference Include="..\LocalCinema\LocalCinema.csproj" />
+    <ProjectReference Include="..\FlowsLoopsAndStrings.LocalCinema\FlowsLoopsAndStrings.Cinema.csproj" />
   </ItemGroup>
 
 </Project>

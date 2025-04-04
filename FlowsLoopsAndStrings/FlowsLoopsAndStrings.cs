@@ -1,4 +1,6 @@
-﻿using FlowsLoopsAndStrings.Helpers;
+﻿using FlowsLoopsAndStrings.Cinema;
+using FlowsLoopsAndStrings.Helpers;
+
 
 namespace FlowsLoopsAndStrings;
 public class FlowsLoopsAndStrings
@@ -20,7 +22,10 @@ public class FlowsLoopsAndStrings
             {
                 case (int)MainMenuEnum.GoToTheCinema:
                 Console.WriteLine("Going to the cinema!");
-                LocalCinema().Start();
+
+                LocalCinema lc = new LocalCinema();
+                lc.Start();
+
                 break;
                 case (int)MainMenuEnum.Exit:
                 Console.WriteLine("Bye!");
