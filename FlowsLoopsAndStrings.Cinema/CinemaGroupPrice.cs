@@ -13,31 +13,66 @@ public class CinemaGroupPrice
         private set { numberOfVisitors = value; }
     }
 
+    private decimal totalPrice;
+
+    public decimal TotalPrice
+    {
+        get { return totalPrice; }
+        private set { totalPrice += value; }
+    }
+
     public CinemaGroupPrice()
     {
-
+        NumberOfVisitors = 0;
+        TotalPrice = 0;
     }
-    public decimal TotalTicketPrice()
+
+    public void Run()
     {
-        decimal totalTicketPrice = 0;
+        GetNumberOfVisitors();
+        TotalTicketPrice();
+        DisplayTicketPriceTotal();
+    }
+
+    private void DisplayTicketPriceTotal()
+    {
+        Console.WriteLine("Total price for all tickets.");
+        Console.WriteLine($"{NumberOfVisitors} tickets costs {string.Format("{0:c}", TotalPrice)}");
+        Utilities.NewLine();
+    }
+
+    private void TotalTicketPrice()
+    {
         CinemaCheckAge cinemaCheckAge = new CinemaCheckAge();
 
-        for (int visitorNumber = 0; visitorNumber < numberOfVisitors; visitorNumber++)
+        for (int visitorNumber = 0; visitorNumber < NumberOfVisitors; visitorNumber++)
         {
-
+            cinemaCheckAge.Run();
+            TotalPrice = cinemaCheckAge.TicketPrice;
 
         }
-        return totalTicketPrice;
-
     }
-    internal void GetNumberOfVisitors()
+
+    private void GetNumberOfVisitors()
     {
+        bool validatNumberOfVisitors = false;
 
         do
         {
 
             numberOfVisitors = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterTheNumberOfVisitorsPrompt);
-        } while (numberOfVisitors <= (int)LocalCinemaMenuChoicesEnum.Exit);
+            if (numberOfVisitors > (int)LocalCinemaMenuChoicesEnum.Exit)
+            {
+                validatNumberOfVisitors = true;
+            }
+            else
+            {
+                Utilities.ErrorTextColour();
+                Console.WriteLine("There must be at least 1 visitor.");
+                Utilities.CinemaTextColour();
+                Utilities.NewLine();
+            }
+        } while (!validatNumberOfVisitors);
 
     }
 

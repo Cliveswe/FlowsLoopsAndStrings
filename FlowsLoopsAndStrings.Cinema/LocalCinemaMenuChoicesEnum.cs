@@ -13,7 +13,7 @@ public enum LocalCinemaMenuChoicesEnum
     [Description("Exit")]
     Exit = 0,
 
-    [Description("Enter your age")]
+    [Description("Enter visitors age")]
     EnterYourAgePrompt = -1,
 
     [Description("How many visitors")]

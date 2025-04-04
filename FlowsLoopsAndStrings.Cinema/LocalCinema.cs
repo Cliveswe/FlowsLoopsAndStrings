@@ -31,8 +31,7 @@ public class LocalCinema
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
 
                 CinemaGroupPrice? groupPrice = new CinemaGroupPrice();
-                groupPrice.GetNumberOfVisitors();
-                groupPrice.TotalTicketPrice();
+                groupPrice.Run();
                 groupPrice = null;
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.Exit:
@@ -88,7 +87,7 @@ public class LocalCinema
             if (Utilities.GetEnumDecryption(menuChoice, out choice))
             {
 
-                //dont display the prompts
+                //don't display the prompts
                 if ((int)menuChoice < (int)LocalCinemaMenuChoicesEnum.Exit)
                 {
 
