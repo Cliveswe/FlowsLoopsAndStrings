@@ -9,24 +9,28 @@ public static class Utils
     /// </summary>
     /// <param name="value">An enum member.</param>
     /// <returns>The enum decryption as a string.</returns>
-    public static string GetEnumDecryption(Enum value)
+    public static bool GetEnumDecryption(Enum value, out string decryptionAsString)
     {
-        string res = value.ToString();
 
-        FieldInfo? field = value.GetType().GetField(value.ToString());
+        Type Type = value.GetType();
+        FieldInfo field = Type.GetField(value.ToString());
         string name = value.ToString();
 
-        if (field != null)
+        if ((field != null) && (name != null))
         {
-            res = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is not DescriptionAttribute attribute ? name : attribute.Description;
+
+            decryptionAsString = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is not DescriptionAttribute attribute ? name : attribute.Description;
+            return true;
         }
         else
         {
-            res = name;
-        }
-        //return Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is not DescriptionAttribute attribute ? name : attribute.Description;
-        return res;
 
-    }
+            decryptionAsString = name;
+        }
+
+        return false;
+
+    }//end of GetEnumDecryption
+
 }//end of class
 
