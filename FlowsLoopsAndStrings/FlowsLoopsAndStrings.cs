@@ -1,4 +1,5 @@
-﻿using FlowsLoopsAndStrings.Cinema;
+﻿
+using FlowsLoopsAndStrings.Cinema;
 using FlowsLoopsAndStrings.Helpers;
 
 
