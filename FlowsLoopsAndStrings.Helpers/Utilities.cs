@@ -89,5 +89,7 @@ public static class Utilities
 
     public static void ClearScreen() => Console.Clear();
 
+    public static void NewLine() => Console.WriteLine();
+
 }//end of class
 

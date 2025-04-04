@@ -23,10 +23,15 @@ public class LocalCinema
             choice = Utilities.ReadUserChoice(MainMenuEnum.Prompt);
             switch (choice)
             {
+
                 case (int)LocalCinemaMenuChoicesEnum.YouthPensionerCheck:
-                ValidatYouthOrPensioner(GetVisitorsAge());
+
+                CinemaCheckAge cinemaCheckAge = new CinemaCheckAge();
+                cinemaCheckAge.ValidatYouthOrPensioner(cinemaCheckAge.GetVisitorsAge());
+                Utilities.NewLine();
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
+
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.Exit:
                 Utilities.ClearScreen();
@@ -43,30 +48,7 @@ public class LocalCinema
         Utilities.ResetTextColour();
     }
 
-    /// <summary>
-    /// Validate the visitors age.
-    /// </summary>
-    /// <param name="VisitorsAge"></param>
-    private void ValidatYouthOrPensioner(int VisitorsAge)
-    {
 
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    private int GetVisitorsAge()
-    {
-        int userAge = 0;
-        do
-        {
-
-            userAge = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterYourAgePrompt);
-        } while (userAge <= (int)LocalCinemaMenuChoicesEnum.Exit);
-
-        return userAge;
-    }
 
     /// <summary>
     /// Display a formated local cinema menu.
