@@ -82,6 +82,7 @@ public class FlowsLoopsAndStrings
     /// </summary>
     private void DisplayMenu()
     {
+
         Console.WriteLine("***********************************");
         Console.WriteLine("* Choose an option from the menu. *");
         Console.WriteLine("***********************************");

@@ -13,18 +13,59 @@ public class LocalCinema
         bool done = false;
         int choice = 0;
 
-        Utilities.CinemaClearScreen();
-        Utilities.CinemaTextColour();
+        Utilities.ClearScreen();
+
 
         do
         {
-
+            Utilities.CinemaTextColour();
             DisplayMenu();
             choice = Utilities.ReadUserChoice(MainMenuEnum.Prompt);
+            switch (choice)
+            {
+                case (int)LocalCinemaMenuChoicesEnum.YouthPensionerCheck:
+                ValidatYouthOrPensioner(GetVisitorsAge());
+                break;
+                case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
+                break;
+                case (int)LocalCinemaMenuChoicesEnum.Exit:
+                Utilities.ClearScreen();
+                Utilities.ResetTextColour();
+                done = true;
+                break;
+                default:
+                Utilities.InputErrorDisplayMessage();
+                break;
+            }
 
         } while (!done);
 
         Utilities.ResetTextColour();
+    }
+
+    /// <summary>
+    /// Validate the visitors age.
+    /// </summary>
+    /// <param name="VisitorsAge"></param>
+    private void ValidatYouthOrPensioner(int VisitorsAge)
+    {
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private int GetVisitorsAge()
+    {
+        int userAge = 0;
+        do
+        {
+
+            userAge = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterYourAgePrompt);
+        } while (userAge <= (int)LocalCinemaMenuChoicesEnum.Exit);
+
+        return userAge;
     }
 
     /// <summary>
@@ -43,6 +84,7 @@ public class LocalCinema
             Enum.GetValues(typeof(LocalCinemaMenuChoicesEnum)))
         {
             string choice = "";
+
             if (menuChoice == LocalCinemaMenuChoicesEnum.Exit)
             {
                 Utilities.GetEnumDecryption(menuChoice, out exit);
@@ -52,6 +94,14 @@ public class LocalCinema
 
             if (Utilities.GetEnumDecryption(menuChoice, out choice))
             {
+
+                //dont display the prompts
+                if ((int)menuChoice < (int)LocalCinemaMenuChoicesEnum.Exit)
+                {
+
+                    continue;
+                }
+
                 DisplayChoice((int)menuChoice, choice);
             }
         }

@@ -65,10 +65,15 @@ public static class Utilities
     {
         string message = "";
 
+        //save a copy of the current console foreground colour to be restored at 
+        //the end of this method
+        ConsoleColor currentConsoleColour = Console.ForegroundColor;
+
         ErrorTextColour();
         GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
         Console.WriteLine($"{Environment.NewLine}{message}");
-        ResetTextColour();
+
+        Console.ForegroundColor = currentConsoleColour;
     }//end of InputErrorDisplayMessage
 
     /// <summary>
@@ -82,7 +87,7 @@ public static class Utilities
     public static void ErrorTextColour() => Console.ForegroundColor = ConsoleColor.Cyan;
     public static void ResetTextColour() => Console.ResetColor();
 
-    public static void CinemaClearScreen() => Console.Clear();
+    public static void ClearScreen() => Console.Clear();
 
 }//end of class
 
