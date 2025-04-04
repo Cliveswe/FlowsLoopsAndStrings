@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FlowsLoopsAndStrings.Helpers\FlowsLoopsAndStrings.Helpers.csproj" />
+  </ItemGroup>
+
 </Project>
