@@ -10,12 +10,21 @@ public class LocalCinema
     }
     public void Start()
     {
-        CinemaClearScreen();
-        CinemaTextColour();
+        bool done = false;
+        int choice = 0;
 
-        DisplayMenu();
+        Utilities.CinemaClearScreen();
+        Utilities.CinemaTextColour();
 
-        ResetTextColour();
+        do
+        {
+
+            DisplayMenu();
+            choice = Utilities.ReadUserChoice(MainMenuEnum.Prompt);
+
+        } while (!done);
+
+        Utilities.ResetTextColour();
     }
 
     /// <summary>
@@ -58,9 +67,6 @@ public class LocalCinema
     private void DisplayChoice(int MenuNumber, string MenuDescription) =>
         Console.WriteLine($"{MenuNumber} {MenuDescription}");
 
-    private void CinemaTextColour() => Console.ForegroundColor = ConsoleColor.Green;
-    private void ResetTextColour() => Console.ResetColor();
 
-    private void CinemaClearScreen() => Console.Clear();
 
 }//end of class

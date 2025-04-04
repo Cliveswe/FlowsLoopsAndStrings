@@ -71,10 +71,10 @@ public class FlowsLoopsAndStrings
     {
         string message = "";
 
-        ErrorTextColour();
+        Utilities.ErrorTextColour();
         Utilities.GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
         Console.WriteLine($"{Environment.NewLine}{message}");
-        ResetTextColour();
+        Utilities.ResetTextColour();
     }
 
     /// <summary>
@@ -110,26 +110,19 @@ public class FlowsLoopsAndStrings
             if (Utilities.GetEnumDecryption(mainMenuEnum, out res))
             {
 
-                DisplayChoice((int)mainMenuEnum, res);
+                Utilities.DisplayChoice((int)mainMenuEnum, res);
             }
         }
 
         if (!string.IsNullOrEmpty(exit))
         {
-            DisplayChoice((int)MainMenuEnum.Exit, exit);
+            Utilities.DisplayChoice((int)MainMenuEnum.Exit, exit);
         }
 
         Console.WriteLine("-----------------------------------");
     }//end of DisplayMenu
 
-    /// <summary>
-    /// Format and display a menu choice.
-    /// </summary>
-    /// <param name="MenuNumber">The key menu choice as an int.</param>
-    /// <param name="MenuDescription">Text Description of the menu choice as String</param>
-    private void DisplayChoice(int MenuNumber, string MenuDescription) => Console.WriteLine($"{MenuNumber} {MenuDescription}");
 
-    private void ErrorTextColour() => Console.ForegroundColor = ConsoleColor.Cyan;
-    private void ResetTextColour() => Console.ResetColor();
+
 }//end of class
 
