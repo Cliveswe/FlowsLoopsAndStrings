@@ -4,18 +4,31 @@ namespace FlowsLoopsAndStrings.Cinema;
 
 public class CinemaCheckAge
 {
+    private string ticketPriceInfo;
+    private decimal ticketPrice;
+
+    public decimal TicketPrice
+    {
+        get { return ticketPrice; }
+        private set { ticketPrice = value; }
+    }
+    public string TicketPriceInfo
+    {
+        get { return ticketPriceInfo; }
+        private set { ticketPriceInfo = value; }
+    }
+
     public CinemaCheckAge()
     {
-
+        TicketPrice = 0M;
+        TicketPriceInfo = "";
     }
     /// <summary>
     /// Validate the visitors age.
     /// </summary>
     /// <param name="VisitorsAge">The age of the visitor to the cinema as a int.</param>
-    public void ValidatYouthOrPensioner(int VisitorsAge)
+    public void ValidateYouthOrPensioner(int VisitorsAge)
     {
-        string ticketPriceInfo = "";
-        decimal ticketPrice = 0M;
 
         //If you are a Youth your ticket will be a youth ticket
         if (VisitorsAge < (int)CinemaPriceCategoriesEnum.Youth)
@@ -25,7 +38,6 @@ public class CinemaCheckAge
             {
 
                 ticketPrice = (decimal)CinemaPriceCategoriesEnum.YouthTicketPrice;
-                DisplayTicketPrice(ticketPriceInfo, ticketPrice);
             }
         }//If you are a Pensioner your ticket will be a pensioners ticket
         else if (VisitorsAge > (int)CinemaPriceCategoriesEnum.Pensioner)
@@ -35,7 +47,6 @@ public class CinemaCheckAge
             {
 
                 ticketPrice = (decimal)CinemaPriceCategoriesEnum.PensionerTicketPrice;
-                DisplayTicketPrice(ticketPriceInfo, ticketPrice);
             }
         }
         else//If you are neither Pensioner or Youth your ticket will be a standard ticket
@@ -44,7 +55,6 @@ public class CinemaCheckAge
             {
 
                 ticketPrice = (decimal)CinemaPriceCategoriesEnum.StandardTicketPrice;
-                DisplayTicketPrice(ticketPriceInfo, ticketPrice);
             }
         }
     }
@@ -54,9 +64,9 @@ public class CinemaCheckAge
     /// </summary>
     /// <param name="ticketPriceInfo">Information on what you ticket is as a string.</param>
     /// <param name="ticketPrice">Price of your ticket as int.</param>
-    private void DisplayTicketPrice(string ticketPriceInfo, decimal ticketPrice)
+    public void DisplayTicketPrice()
     {
-        Console.WriteLine($"{ticketPriceInfo}: {string.Format("{0:c}", ticketPrice)}");
+        Console.WriteLine($"{TicketPriceInfo}: {string.Format("{0:c}", TicketPrice)}");
     }
 
     /// <summary>

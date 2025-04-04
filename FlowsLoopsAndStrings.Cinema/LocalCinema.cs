@@ -27,7 +27,8 @@ public class LocalCinema
                 case (int)LocalCinemaMenuChoicesEnum.YouthPensionerCheck:
 
                 CinemaCheckAge? cinemaCheckAge = new CinemaCheckAge();
-                cinemaCheckAge.ValidatYouthOrPensioner(cinemaCheckAge.GetVisitorsAge());
+                cinemaCheckAge.ValidateYouthOrPensioner(cinemaCheckAge.GetVisitorsAge());
+                cinemaCheckAge.DisplayTicketPrice();
                 cinemaCheckAge = null;
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:

@@ -5,28 +5,39 @@ namespace FlowsLoopsAndStrings.Cinema;
 
 public class CinemaGroupPrice
 {
+    private int numberOfVisitors;
+
+    public int NumberOfVisitors
+    {
+        get { return numberOfVisitors; }
+        private set { numberOfVisitors = value; }
+    }
+
     public CinemaGroupPrice()
     {
 
     }
-    public decimal TotalTicketPrice(decimal ticketPrice)
+    public decimal TotalTicketPrice(int numberOfVisitors)
     {
         decimal totalTicketPrice = 0;
+        CinemaCheckAge cinemaCheckAge = new CinemaCheckAge();
 
+        for (int visitorNumber = 0; visitorNumber < numberOfVisitors; visitorNumber++)
+        {
+
+
+        }
         return totalTicketPrice;
 
     }
-    internal int GetNumberOfVisitors()
+    internal void GetNumberOfVisitors()
     {
 
-        int numberOfVisitors = 0;
         do
         {
 
             numberOfVisitors = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterTheNumberOfVisitorsPrompt);
         } while (numberOfVisitors <= (int)LocalCinemaMenuChoicesEnum.Exit);
-
-        return numberOfVisitors;
 
     }
 
