@@ -33,34 +33,24 @@ public class FlowsLoopsAndStrings
     }//end of Start
 
     /// <summary>
-    /// Get the user menu choice. If the user choice is number then return the choice otherwise
-    /// keep prompting the user to choose a menu option.
+    /// Get the user menu choice. If the user choice is number then return the choice 
     /// </summary>
     /// <param name="prompt">Select a message from a Enum.</param>
-    /// <returns>The user choice as a number int.</returns>
+    /// <returns>The user choice as a number int otherwise -1 for an incorrect choice.</returns>
     private int ReadUserChoice(Enum prompt)
     {
-        int userChoice = 0;
+        int userChoice = -1;
         string promptMessage = "";
-        bool success = false;
 
-        do
+        Utils.GetEnumDecryption(prompt, out promptMessage);
+
+        Console.Write($"{promptMessage}: ");
+
+        if (!int.TryParse(Console.ReadLine(), out userChoice))
         {
-            Utils.GetEnumDecryption(prompt, out promptMessage);
-
-            Console.Write($"{promptMessage}: ");
-
-            if (!int.TryParse(Console.ReadLine(), out userChoice))
-            {
-                InputErrorDisplayMessage();
-                continue;
-            }
-            else
-            {
-                success = true;
-            }
-
-        } while (!success);
+            InputErrorDisplayMessage();
+            userChoice = -1;
+        }
 
         return userChoice;
     }
@@ -72,8 +62,10 @@ public class FlowsLoopsAndStrings
     {
         string message = "";
 
+        ErrorTextColour();
         Utils.GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
-        Console.WriteLine($"{message}");
+        Console.WriteLine($"{Environment.NewLine}{message}");
+        ResetTextColour();
     }
     /// <summary>
     /// Display a formated main menu.
@@ -127,6 +119,7 @@ public class FlowsLoopsAndStrings
     /// <param name="MenuDescription">Text Description of the menu choice as String</param>
     private void DisplayChoice(int MenuNumber, string MenuDescription) => Console.WriteLine($"{MenuNumber} {MenuDescription}");
 
-
+    private void ErrorTextColour() => Console.ForegroundColor = ConsoleColor.Cyan;
+    private void ResetTextColour() => Console.ResetColor();
 }//end of class
 
