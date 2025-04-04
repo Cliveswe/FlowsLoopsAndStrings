@@ -26,7 +26,7 @@ public class LocalCinema
 
                 case (int)LocalCinemaMenuChoicesEnum.YouthPensionerCheck:
 
-                RunGetYoutrPensionerCheck();
+                RunGetYouthPensionerCheck();
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
 
@@ -53,7 +53,7 @@ public class LocalCinema
         Utilities.ResetTextColour();
     }
 
-    private void RunGetYoutrPensionerCheck()
+    private void RunGetYouthPensionerCheck()
     {
 
         CinemaCheckAge? cinemaCheckAge = new CinemaCheckAge();
