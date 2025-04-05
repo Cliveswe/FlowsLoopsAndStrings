@@ -11,7 +11,7 @@ public class FlowsLoopsAndStrings
 
     }
 
-    public void Start()
+    public static void Start()
     {
         int choice;
         bool done = false;
@@ -48,34 +48,20 @@ public class FlowsLoopsAndStrings
 
     }//end of Start
 
-    /// <summary>
-    /// Display a menu option as text.
-    /// </summary>
-    /// <param name="menuOption">Enum class containing options and text explaining each option.</param>
-    private void DisplayMenuOption(Enum menuOption)
-    {
-        string prompt = string.Empty;
-
-        Utilities.GetEnumDecryption(menuOption, out prompt);
-        Console.WriteLine($"{prompt}");
-    }
-
 
     /// <summary>
     /// Get the user menu choice. If the user choice is number then return the choice 
     /// </summary>
     /// <param name="prompt">Select a message from a Enum.</param>
     /// <returns>The user choice as a number int otherwise -1 for an incorrect choice.</returns>
-    private int ReadUserChoice(Enum prompt)
+    private static int ReadUserChoice(Enum prompt)
     {
-        int userChoice = -1;
-        string promptMessage = "";
 
-        Utilities.GetEnumDecryption(prompt, out promptMessage);
+        Utilities.GetEnumDecryption(prompt, out string promptMessage);
 
         Console.Write($"{promptMessage}: ");
 
-        if (!int.TryParse(Console.ReadLine(), out userChoice))
+        if (!int.TryParse(Console.ReadLine(), out int userChoice))
         {
             InputErrorDisplayMessage();
             userChoice = -1;
@@ -87,12 +73,11 @@ public class FlowsLoopsAndStrings
     /// <summary>
     /// Inform the user that they inputed an incorrect choice.
     /// </summary>
-    private void InputErrorDisplayMessage()
+    private static void InputErrorDisplayMessage()
     {
-        string message = "";
 
         Utilities.ErrorTextColour();
-        Utilities.GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
+        Utilities.GetEnumDecryption(MainMenuEnum.WrongChoice, out string message);
         Console.WriteLine($"{Environment.NewLine}{message}");
         Utilities.ResetTextColour();
     }
@@ -100,7 +85,7 @@ public class FlowsLoopsAndStrings
     /// <summary>
     /// Display a formated main menu.
     /// </summary>
-    private void DisplayMenu()
+    private static void DisplayMenu()
     {
 
         Console.WriteLine("***********************************");
@@ -111,7 +96,6 @@ public class FlowsLoopsAndStrings
 
         foreach (MainMenuEnum mainMenuEnum in Enum.GetValues(typeof(MainMenuEnum)))
         {
-            string res;
 
             //exit to be added at the end of the displayed menu
             if (mainMenuEnum == MainMenuEnum.Exit)
@@ -128,7 +112,7 @@ public class FlowsLoopsAndStrings
             }
 
             //Get the menu choice decryption
-            if (Utilities.GetEnumDecryption(mainMenuEnum, out res))
+            if (Utilities.GetEnumDecryption(mainMenuEnum, out string res))
             {
 
                 Utilities.DisplayChoice((int)mainMenuEnum, res);
