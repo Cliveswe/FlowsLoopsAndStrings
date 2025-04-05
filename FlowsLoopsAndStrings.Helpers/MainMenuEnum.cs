@@ -12,6 +12,9 @@ namespace FlowsLoopsAndStrings.Helpers
         [Description("Repeat 10 times!")]
         Repeat10Times,
 
+        [Description("3rd word!")]
+        TheThirdWord,
+
         [Description("Wrong choice, try again!")]
         WrongChoice,
 

@@ -34,6 +34,31 @@ public static class Utilities
 
     }//end of GetEnumDecryption
 
+    public static string ReadInputString()
+    {
+        bool done;
+        string inputText;
+
+        do
+        {
+
+            Console.Write("Input your text: ");
+            inputText = Console.ReadLine();
+            done = string.IsNullOrEmpty(inputText);
+            if (done)
+            {
+
+                Utilities.ErrorTextColour();
+                Console.WriteLine("You need to input some text.");
+                Utilities.ResetTextColour();
+                inputText = string.Empty;
+            }
+        }
+        while (done);
+
+        return inputText;
+    }
+
     /// <summary>
     /// Get the user menu choice. If the user choice is number then return the choice 
     /// </summary>

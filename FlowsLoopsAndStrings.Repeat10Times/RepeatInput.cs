@@ -34,6 +34,14 @@ namespace FlowsLoopsAndStrings.Repeat10Times
             Utilities.NewLine();
         }
 
+        /// <summary>
+        /// Get the users text input.
+        /// </summary>
+        private void ReadInputString()
+        {
+            InputText = Utilities.ReadInputString();
+        }
+
         private void RepeatTextToUser()
         {
             for (int index = 0; index < repeatNumber; index++)
@@ -50,28 +58,7 @@ namespace FlowsLoopsAndStrings.Repeat10Times
 
         }
 
-        private void ReadInputString()
-        {
-            bool done;
 
-            do
-            {
-
-                Console.Write("Input your text: ");
-                InputText = Console.ReadLine();
-                done = string.IsNullOrEmpty(InputText);
-                if (done)
-                {
-
-                    Utilities.ErrorTextColour();
-                    Console.WriteLine("You need to input some text.");
-                    Utilities.ResetTextColour();
-                    InputText = string.Empty;
-                }
-            }
-            while (done);
-
-        }
 
         private void DisplayInfomationToUser()
         {
