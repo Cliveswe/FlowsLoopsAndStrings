@@ -29,21 +29,58 @@ namespace FlowsLoopsAndString.TheThirdWord
 
         public void TheThirdWord()
         {
+
             DisplayInformationToTheUser();
             ReadUserInput();
-            ValidateText();
-            DisplayEveryThirdWord();
+            DisplayResults();
         }
 
-        private void DisplayEveryThirdWord()
+        private void DisplayResults()
         {
-            throw new NotImplementedException();
+            if (SplitAndValidateText(out string[] testTextResult) &&
+                (testTextResult.Length >= minimumNumberOfWords))
+            {
+                DisplayEveryThirdWord(testTextResult);
+            }
+            else
+            {
+                Console.WriteLine("Nothing to display!");
+            }
+            Utilities.NewLine();
         }
 
-        private bool ValidateText()
+
+        private void DisplayEveryThirdWord(string[] testTextResult)
+        {
+            for (int index = 0; index < testTextResult.Length; index++)
+            {
+
+                if ((index + 1) % minimumNumberOfWords == 0)
+                {
+
+                    if (!testTextResult[index].Any(Char.IsDigit))
+                    {
+
+                        Console.WriteLine($"{testTextResult[index]}");
+                    }
+                    else
+                    {
+
+                        //found a word that is contaminated
+                        Utilities.ErrorTextColour();
+                        Console.WriteLine($"{testTextResult[index]} is technically not a word!");
+                        Utilities.ResetTextColour();
+                    }
+                }
+            }
+        }
+
+        private bool SplitAndValidateText(out string[] testText)
         {
 
-            var testText = InputText.Split([' '], StringSplitOptions.RemoveEmptyEntries);
+            testText = InputText.Split([' '], StringSplitOptions.RemoveEmptyEntries);
+            //bool integer = testText[0].Any(Char.IsDigit);
+
             if (testText.Length >= minimumNumberOfWords)
             {
                 OutputText = testText;
