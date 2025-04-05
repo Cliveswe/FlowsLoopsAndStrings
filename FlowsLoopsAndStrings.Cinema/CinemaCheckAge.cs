@@ -56,9 +56,17 @@ public class CinemaCheckAge
     /// </summary>
     private void ValidateYouthOrPensioner()
     {
+        if ((VisitorsAge < (int)CinemaPriceCategoriesEnum.Child) ||
+            (VisitorsAge > (int)CinemaPriceCategoriesEnum.Centennial))
+        {
 
-        //If you are a Youth your ticket will be a youth ticket
-        if (VisitorsAge < (int)CinemaPriceCategoriesEnum.Youth)
+            if (Utilities.GetEnumDecryption(CinemaPriceCategoriesEnum.Free, out ticketPriceInfo))
+            {
+
+                TicketPrice = (decimal)CinemaPriceCategoriesEnum.Free;
+            }
+        }//If you are a Youth your ticket will be a youth ticket
+        else if (VisitorsAge < (int)CinemaPriceCategoriesEnum.Youth)
         {
 
             if (Utilities.GetEnumDecryption(CinemaPriceCategoriesEnum.YouthTicketPrice, out ticketPriceInfo))
