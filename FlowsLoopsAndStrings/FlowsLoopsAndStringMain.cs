@@ -2,10 +2,10 @@
 {
     internal class FlowsLoopsAndStringMain
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            FlowsLoopsAndStrings flowsLoopsAndStringObj = new FlowsLoopsAndStrings();
-            flowsLoopsAndStringObj.Start();
+            //FlowsLoopsAndStrings flowsLoopsAndStringObj = new ();
+            FlowsLoopsAndStrings.Start();
 
         }
     }
