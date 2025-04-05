@@ -44,7 +44,7 @@ public class CinemaCheckAge
     /// <summary>
     /// Method that runs that check the age of the visitor.
     /// </summary>
-    public void Run()
+    public void VisitorsTicketPrice()
     {
         GetVisitorsAge();
         ValidateYouthOrPensioner();

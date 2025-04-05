@@ -2,7 +2,7 @@
 
 namespace FlowsLoopsAndStrings.Cinema;
 
-public class LocalCinema
+public class LocalCinema : CinemaCheckAge
 {
     public LocalCinema()
     {
@@ -15,7 +15,6 @@ public class LocalCinema
 
         Utilities.ClearScreen();
 
-
         do
         {
             Utilities.CinemaTextColour();
@@ -26,7 +25,7 @@ public class LocalCinema
 
                 case (int)LocalCinemaMenuChoicesEnum.YouthPensionerCheck:
 
-                RunGetYouthPensionerCheck();
+                VisitorsTicketPrice();
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
 
@@ -38,7 +37,6 @@ public class LocalCinema
 
                 Utilities.ClearScreen();
                 Utilities.ResetTextColour();
-
                 done = true;
                 break;
                 default:
@@ -46,18 +44,11 @@ public class LocalCinema
                 Utilities.InputErrorDisplayMessage();
                 break;
             }
+
             Utilities.NewLine();
         } while (!done);
 
         Utilities.ResetTextColour();
-    }
-
-    private void RunGetYouthPensionerCheck()
-    {
-
-        CinemaCheckAge? cinemaCheckAge = new CinemaCheckAge();
-        cinemaCheckAge.Run();
-        cinemaCheckAge = null;
     }
 
     /// <summary>

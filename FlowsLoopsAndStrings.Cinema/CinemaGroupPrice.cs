@@ -47,7 +47,7 @@ public class CinemaGroupPrice
 
         for (int visitorNumber = 0; visitorNumber < NumberOfVisitors; visitorNumber++)
         {
-            cinemaCheckAge.Run();
+            cinemaCheckAge.VisitorsTicketPrice();
             TotalPrice = cinemaCheckAge.TicketPrice;
 
         }
