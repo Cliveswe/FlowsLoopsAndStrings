@@ -29,6 +29,8 @@ public class FlowsLoopsAndStrings
                 break;
                 case (int)MainMenuEnum.Repeat10Times:
 
+                Console.WriteLine("Repeat 10 times!");
+
                 break;
                 case (int)MainMenuEnum.Exit:
 

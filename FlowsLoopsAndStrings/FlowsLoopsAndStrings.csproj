@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FlowsLoopsAndStrings.Cinema\FlowsLoopsAndStrings.Cinema.csproj" />
     <ProjectReference Include="..\FlowsLoopsAndStrings.Helpers\FlowsLoopsAndStrings.Helpers.csproj" />
+    <ProjectReference Include="..\FlowsLoopsAndStrings.Repeat10Times\FlowsLoopsAndStrings.Repeat10Times.csproj" />
   </ItemGroup>
 
 </Project>
