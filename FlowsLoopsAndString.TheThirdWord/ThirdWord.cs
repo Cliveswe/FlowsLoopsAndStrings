@@ -1,7 +1,10 @@
-﻿namespace FlowsLoopsAndString.TheThirdWord
+﻿
+namespace FlowsLoopsAndString.TheThirdWord
 {
     public class ThirdWord
     {
+        private readonly int minimumNumberOfWords = 3;
+
         private string inputText;
         public string InputText
         {
@@ -13,6 +16,18 @@
 
         }
 
+        public void TheThirdWord()
+        {
+            DisplayInformationToTheUser();
 
+        }
+
+        private void DisplayInformationToTheUser()
+        {
+            Console.WriteLine($"*********************************");
+            Console.WriteLine($"* Input a sentence with a minimum of {minimumNumberOfWords} words.");
+            Console.WriteLine($"* I will display every {minimumNumberOfWords}rd word.");
+            Console.WriteLine("----------------------------------");
+        }
     }
 }

@@ -11,12 +11,12 @@ public static class Utilities
     /// </summary>
     /// <param name="value">An enum member.</param>
     /// <returns>The enum decryption as a string.</returns>
-    public static bool GetEnumDecryption(Enum value, out string decryptionAsString)
+    public static bool GetEnumDecryption(Enum value, out string? decryptionAsString)
     {
 
         Type Type = value.GetType();
-        FieldInfo field = Type.GetField(value.ToString());
-        string name = value.ToString();
+        FieldInfo? field = Type.GetField(value.ToString());
+        string? name = value.ToString();
 
         if ((field != null) && (name != null))
         {
@@ -34,10 +34,10 @@ public static class Utilities
 
     }//end of GetEnumDecryption
 
-    public static string ReadInputString()
+    public static string? ReadInputString()
     {
         bool done;
-        string inputText;
+        string? inputText;
 
         do
         {
@@ -67,7 +67,7 @@ public static class Utilities
     public static int ReadUserChoice(Enum prompt)
     {
 
-        Utilities.GetEnumDecryption(prompt, out string promptMessage);
+        Utilities.GetEnumDecryption(prompt, out string? promptMessage);
 
         Console.Write($"{promptMessage}: ");
 
@@ -92,7 +92,7 @@ public static class Utilities
         ConsoleColor currentConsoleColour = Console.ForegroundColor;
 
         ErrorTextColour();
-        GetEnumDecryption(MainMenuEnum.WrongChoice, out string message);
+        GetEnumDecryption(MainMenuEnum.WrongChoice, out string? message);
         Console.WriteLine($"{Environment.NewLine}{message}");
 
         Console.ForegroundColor = currentConsoleColour;
