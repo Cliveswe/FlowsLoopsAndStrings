@@ -49,7 +49,6 @@ namespace FlowsLoopsAndString.TheThirdWord
             Utilities.NewLine();
         }
 
-
         private void DisplayEveryThirdWord(string[] testTextResult)
         {
             for (int index = 0; index < testTextResult.Length; index++)
@@ -75,6 +74,11 @@ namespace FlowsLoopsAndString.TheThirdWord
             }
         }
 
+        /// <summary>
+        /// Split the text and check its validity.
+        /// </summary>
+        /// <param name="testText">out parameter text to be tested.</param>
+        /// <returns>true if the tested text contains at least 3 words otherwise false.</returns>
         private bool SplitAndValidateText(out string[] testText)
         {
 
