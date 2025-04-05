@@ -1,7 +1,7 @@
 ﻿
 using FlowsLoopsAndStrings.Cinema;
 using FlowsLoopsAndStrings.Helpers;
-
+using FlowsLoopsAndStrings.Repeat10Times;
 
 namespace FlowsLoopsAndStrings;
 public class FlowsLoopsAndStrings
@@ -25,13 +25,15 @@ public class FlowsLoopsAndStrings
             {
                 case (int)MainMenuEnum.GoToTheCinema:
 
-                DisplayMenuOption(MainMenuEnum.GoToTheCinema);
-                LocalCinema lc = new LocalCinema();
-                lc.GroupTicketPurchase();
+                LocalCinema? localCinema = new LocalCinema();
+                localCinema.GroupTicketPurchase();
+                localCinema = null;
                 break;
                 case (int)MainMenuEnum.Repeat10Times:
 
-                DisplayMenuOption(MainMenuEnum.Repeat10Times);
+                RepeatInput? repeat10Times = new RepeatInput();
+                repeat10Times.RepeatInputedText();
+                repeat10Times = null;
                 break;
                 case (int)MainMenuEnum.Exit:
 
@@ -56,9 +58,11 @@ public class FlowsLoopsAndStrings
     {
         string prompt = string.Empty;
 
-        Utilities.GetEnumDecryption(MainMenuEnum.Repeat10Times, out prompt);
+        Utilities.GetEnumDecryption(menuOption, out prompt);
         Console.WriteLine($"{prompt}");
     }
+
+
     /// <summary>
     /// Get the user menu choice. If the user choice is number then return the choice 
     /// </summary>
