@@ -6,7 +6,7 @@ namespace FlowsLoopsAndStrings.Helpers
     {
 
 
-        [Description("Go to the cinema")]
+        [Description("Go to the cinema.")]
         GoToTheCinema = 1,
 
         [Description("Repeat 10 times!")]

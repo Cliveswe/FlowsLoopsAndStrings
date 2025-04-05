@@ -15,22 +15,23 @@ public class FlowsLoopsAndStrings
     {
         int choice = 0;
         bool done = false;
+
         do
         {
+
             DisplayMenu();
             choice = ReadUserChoice(MainMenuEnum.Prompt);
             switch (choice)
             {
                 case (int)MainMenuEnum.GoToTheCinema:
 
-                Console.WriteLine("Going to the cinema!");
+                DisplayMenuOption(MainMenuEnum.GoToTheCinema);
                 LocalCinema lc = new LocalCinema();
                 lc.GroupTicketPurchase();
                 break;
                 case (int)MainMenuEnum.Repeat10Times:
 
-                Console.WriteLine("Repeat 10 times!");
-
+                DisplayMenuOption(MainMenuEnum.Repeat10Times);
                 break;
                 case (int)MainMenuEnum.Exit:
 
@@ -47,6 +48,17 @@ public class FlowsLoopsAndStrings
 
     }//end of Start
 
+    /// <summary>
+    /// Display a menu option as text.
+    /// </summary>
+    /// <param name="menuOption">Enum class containing options and text explaining each option.</param>
+    private void DisplayMenuOption(Enum menuOption)
+    {
+        string prompt = string.Empty;
+
+        Utilities.GetEnumDecryption(MainMenuEnum.Repeat10Times, out prompt);
+        Console.WriteLine($"{prompt}");
+    }
     /// <summary>
     /// Get the user menu choice. If the user choice is number then return the choice 
     /// </summary>

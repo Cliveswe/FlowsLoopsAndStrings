@@ -2,6 +2,12 @@
 {
     public class RepeatInput
     {
+        public RepeatInput()
+        {
+
+        }
+
+
 
     }
 }
