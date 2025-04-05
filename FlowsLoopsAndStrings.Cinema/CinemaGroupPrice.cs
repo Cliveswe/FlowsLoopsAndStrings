@@ -3,7 +3,7 @@ using FlowsLoopsAndStrings.Helpers;
 
 namespace FlowsLoopsAndStrings.Cinema;
 
-public class CinemaGroupPrice
+public class CinemaGroupPrice : CinemaCheckAge
 {
     private int numberOfVisitors;
 
@@ -43,12 +43,12 @@ public class CinemaGroupPrice
 
     private void TotalTicketPrice()
     {
-        CinemaCheckAge cinemaCheckAge = new CinemaCheckAge();
 
         for (int visitorNumber = 0; visitorNumber < NumberOfVisitors; visitorNumber++)
         {
-            cinemaCheckAge.VisitorsTicketPrice();
-            TotalPrice = cinemaCheckAge.TicketPrice;
+
+            VisitorsTicketPrice();
+            TotalPrice = TicketPrice;
 
         }
     }
