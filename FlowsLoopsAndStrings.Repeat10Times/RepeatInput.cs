@@ -23,7 +23,7 @@ namespace FlowsLoopsAndStrings.Repeat10Times
         public RepeatInput()
         {
             RepeatNumber = 10;
-            InputText = string.Empty;
+            InputText = "";
         }
 
         public void RepeatInputedText()

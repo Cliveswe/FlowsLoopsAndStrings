@@ -41,14 +41,12 @@ public static class Utilities
     /// <returns>The user choice as a number int otherwise -1 for an incorrect choice.</returns>
     public static int ReadUserChoice(Enum prompt)
     {
-        int userChoice = -1;
-        string promptMessage = "";
 
-        Utilities.GetEnumDecryption(prompt, out promptMessage);
+        Utilities.GetEnumDecryption(prompt, out string promptMessage);
 
         Console.Write($"{promptMessage}: ");
 
-        if (!int.TryParse(Console.ReadLine(), out userChoice))
+        if (!int.TryParse(Console.ReadLine(), out int userChoice))
         {
             InputErrorDisplayMessage();
             userChoice = -1;
@@ -63,14 +61,13 @@ public static class Utilities
     /// </summary>
     public static void InputErrorDisplayMessage()
     {
-        string message = "";
 
         //save a copy of the current console foreground colour to be restored at 
         //the end of this method
         ConsoleColor currentConsoleColour = Console.ForegroundColor;
 
         ErrorTextColour();
-        GetEnumDecryption(MainMenuEnum.WrongChoice, out message);
+        GetEnumDecryption(MainMenuEnum.WrongChoice, out string message);
         Console.WriteLine($"{Environment.NewLine}{message}");
 
         Console.ForegroundColor = currentConsoleColour;
