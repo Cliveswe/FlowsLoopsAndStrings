@@ -25,7 +25,7 @@ public class FlowsLoopsAndStrings
                 Console.WriteLine("Going to the cinema!");
 
                 LocalCinema lc = new LocalCinema();
-                lc.Start();
+                lc.GroupTicketPurchase();
 
                 break;
                 case (int)MainMenuEnum.Exit:

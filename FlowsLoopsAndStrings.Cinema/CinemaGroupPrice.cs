@@ -27,7 +27,7 @@ public class CinemaGroupPrice : CinemaCheckAge
         TotalPrice = 0;
     }
 
-    public void Run()
+    public void GroupTotalTicketPrice()
     {
         GetNumberOfVisitors();
         TotalTicketPrice();
@@ -63,15 +63,18 @@ public class CinemaGroupPrice : CinemaCheckAge
             numberOfVisitors = Utilities.ReadUserChoice(LocalCinemaMenuChoicesEnum.EnterTheNumberOfVisitorsPrompt);
             if (numberOfVisitors > (int)LocalCinemaMenuChoicesEnum.Exit)
             {
+
                 validatNumberOfVisitors = true;
             }
             else
             {
+
                 Utilities.ErrorTextColour();
                 Console.WriteLine("There must be at least 1 visitor.");
                 Utilities.CinemaTextColour();
                 Utilities.NewLine();
             }
+
         } while (!validatNumberOfVisitors);
 
     }

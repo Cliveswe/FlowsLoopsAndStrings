@@ -4,11 +4,16 @@ namespace FlowsLoopsAndStrings.Cinema;
 
 public class LocalCinema : CinemaCheckAge
 {
+
     public LocalCinema()
     {
 
     }
-    public void Start()
+
+    /// <summary>
+    /// Calculate the total purchase cost for a group of cinema visitors.
+    /// </summary>
+    public void GroupTicketPurchase()
     {
         bool done = false;
         int choice = 0;
@@ -17,6 +22,7 @@ public class LocalCinema : CinemaCheckAge
 
         do
         {
+
             Utilities.CinemaTextColour();
             DisplayMenu();
             choice = Utilities.ReadUserChoice(MainMenuEnum.Prompt);
@@ -30,7 +36,7 @@ public class LocalCinema : CinemaCheckAge
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
 
                 CinemaGroupPrice? groupPrice = new CinemaGroupPrice();
-                groupPrice.Run();
+                groupPrice.GroupTotalTicketPrice();
                 groupPrice = null;
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.Exit:
@@ -91,6 +97,7 @@ public class LocalCinema : CinemaCheckAge
 
         if (!string.IsNullOrEmpty(exit))
         {
+
             DisplayChoice((int)LocalCinemaMenuChoicesEnum.Exit, exit);
         }
 
@@ -99,7 +106,5 @@ public class LocalCinema : CinemaCheckAge
 
     private void DisplayChoice(int MenuNumber, string MenuDescription) =>
         Console.WriteLine($"{MenuNumber} {MenuDescription}");
-
-
 
 }//end of class
