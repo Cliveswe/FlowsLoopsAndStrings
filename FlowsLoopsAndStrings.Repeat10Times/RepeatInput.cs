@@ -52,7 +52,7 @@ namespace FlowsLoopsAndStrings.Repeat10Times
 
         private void ReadInputString()
         {
-            bool done = false;
+            bool done;
 
             do
             {

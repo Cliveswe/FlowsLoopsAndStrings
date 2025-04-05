@@ -13,7 +13,7 @@ public class FlowsLoopsAndStrings
 
     public void Start()
     {
-        int choice = 0;
+        int choice;
         bool done = false;
 
         do
@@ -25,15 +25,13 @@ public class FlowsLoopsAndStrings
             {
                 case (int)MainMenuEnum.GoToTheCinema:
 
-                LocalCinema? localCinema = new LocalCinema();
+                LocalCinema? localCinema = new();
                 localCinema.GroupTicketPurchase();
-                localCinema = null;
                 break;
                 case (int)MainMenuEnum.Repeat10Times:
 
-                RepeatInput? repeat10Times = new RepeatInput();
+                RepeatInput? repeat10Times = new();
                 repeat10Times.RepeatInputedText();
-                repeat10Times = null;
                 break;
                 case (int)MainMenuEnum.Exit:
 
