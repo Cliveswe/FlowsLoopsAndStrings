@@ -29,9 +29,10 @@ public class LocalCinema : CinemaCheckAge
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.GroupTicketPurchase:
 
-                CinemaGroupPrice? groupPrice = new CinemaGroupPrice();
-                groupPrice.Run();
-                groupPrice = null;
+                VisitorsTicketPrice();
+                //CinemaGroupPrice? groupPrice = new CinemaGroupPrice();
+                //groupPrice.Run();
+                //groupPrice = null;
                 break;
                 case (int)LocalCinemaMenuChoicesEnum.Exit:
 
