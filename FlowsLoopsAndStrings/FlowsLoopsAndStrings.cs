@@ -22,17 +22,21 @@ public class FlowsLoopsAndStrings
             switch (choice)
             {
                 case (int)MainMenuEnum.GoToTheCinema:
-                Console.WriteLine("Going to the cinema!");
 
+                Console.WriteLine("Going to the cinema!");
                 LocalCinema lc = new LocalCinema();
                 lc.GroupTicketPurchase();
+                break;
+                case (int)MainMenuEnum.Repeat10Times:
 
                 break;
                 case (int)MainMenuEnum.Exit:
+
                 Console.WriteLine("Bye!");
                 done = true;
                 break;
                 default:
+
                 InputErrorDisplayMessage();
                 break;
             }
