@@ -1,4 +1,5 @@
 ﻿
+using FlowsLoopsAndString.TheThirdWord;
 using FlowsLoopsAndStrings.Cinema;
 using FlowsLoopsAndStrings.Helpers;
 using FlowsLoopsAndStrings.Repeat10Times;
@@ -32,6 +33,11 @@ public class FlowsLoopsAndStrings
 
                 RepeatInput? repeat10Times = new();
                 repeat10Times.RepeatInputedText();
+                break;
+                case (int)MainMenuEnum.TheThirdWord:
+
+                ThirdWord thirdWord = new();
+                thirdWord.TheThirdWord();
                 break;
                 case (int)MainMenuEnum.Exit:
 
