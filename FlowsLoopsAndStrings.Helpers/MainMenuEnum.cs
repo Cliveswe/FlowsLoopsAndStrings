@@ -15,7 +15,7 @@ namespace FlowsLoopsAndStrings.Helpers
         [Description("3rd word!")]
         TheThirdWord,
 
-        [Description("Wrong choice, try again!")]
+        [Description("Nope, try again!")]
         WrongChoice,
 
         [Description("Enter a menu option")]

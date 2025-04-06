@@ -47,7 +47,13 @@ public class LocalCinema : CinemaCheckAge
                 break;
                 default:
 
-                Utilities.InputErrorDisplayMessage();
+                if (!(choice < (int)LocalCinemaMenuChoicesEnum.Exit))
+                {
+
+                    Utilities.ErrorTextColour();
+                    Console.WriteLine($"{choice} is not in the menu.");
+                    Utilities.CinemaTextColour();
+                }
                 break;
             }
 
