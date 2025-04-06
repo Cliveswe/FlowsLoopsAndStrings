@@ -32,6 +32,7 @@ namespace FlowsLoopsAndStrings.Repeat10Times
             ReadInputString();
             RepeatTextToUser();
             Utilities.NewLine();
+            Utilities.NewLine();
         }
 
         /// <summary>
