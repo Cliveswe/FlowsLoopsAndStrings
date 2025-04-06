@@ -47,7 +47,7 @@ public class LocalCinema : CinemaCheckAge
                 break;
                 default:
 
-                if (!(choice < (int)LocalCinemaMenuChoicesEnum.Exit))
+                if (choice < (int)LocalCinemaMenuChoicesEnum.Exit)
                 {
 
                     Utilities.ErrorTextColour();
