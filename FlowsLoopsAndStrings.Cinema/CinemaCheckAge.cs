@@ -121,7 +121,7 @@ public class CinemaCheckAge
             {
 
                 Utilities.ErrorTextColour();
-                Console.WriteLine("Age must cannot be less than 1 years old.");
+                Console.WriteLine("Please enter a realistic age.");
                 Utilities.CinemaTextColour();
                 Utilities.NewLine();
             }
