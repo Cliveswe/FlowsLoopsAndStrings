@@ -99,6 +99,22 @@ public static class Utilities
     }//end of InputErrorDisplayMessage
 
     /// <summary>
+    /// Display a error message.
+    /// </summary>
+    /// <param name="message">The message to be displayed as a string.</param>
+    public static void CustomErrorMessage(string message)
+    {
+        //save a copy of the current console foreground colour to be restored at 
+        //the end of this method
+        ConsoleColor currentConsoleColour = Console.ForegroundColor;
+
+        ErrorTextColour();
+        Console.WriteLine($"{message}");
+
+        Console.ForegroundColor = currentConsoleColour;
+    }
+
+    /// <summary>
     /// Format and display a menu choice.
     /// </summary>
     /// <param name="MenuNumber">The key menu choice as an int.</param>

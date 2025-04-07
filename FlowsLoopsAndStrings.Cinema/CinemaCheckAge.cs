@@ -120,9 +120,8 @@ public class CinemaCheckAge
             else
             {
 
-                Utilities.ErrorTextColour();
-                Console.WriteLine("Please enter a realistic age.");
-                Utilities.CinemaTextColour();
+                Utilities.NewLine();
+                Utilities.CustomErrorMessage("Please enter a realistic age.");
                 Utilities.NewLine();
             }
 

@@ -46,9 +46,9 @@ public class FlowsLoopsAndStrings
                 break;
                 default:
 
-                Utilities.ErrorTextColour();
-                Console.WriteLine("Please choose an option from the available menu options!");
-                Utilities.ResetTextColour();
+                Utilities.NewLine();
+                Utilities.CustomErrorMessage("Please choose an option from the available menu options!");
+                Utilities.NewLine();
                 break;
             }
 
